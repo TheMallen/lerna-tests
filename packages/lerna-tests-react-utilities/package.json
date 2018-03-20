@@ -1,5 +1,5 @@
 {
-  "name": "@shopify/react-utilities",
+  "name": "@shopify/lerna-tests-react-utilities",
   "version": "3.0.2",
   "license": "MIT",
   "scripts": {
