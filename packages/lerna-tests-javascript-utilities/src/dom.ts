@@ -1,3 +1,7 @@
+export function foo() {
+  console.log(':)');
+}
+
 export function nodeContainsDescendant(
   rootNode: HTMLElement,
   descendant: HTMLElement,

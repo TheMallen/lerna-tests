@@ -1,10 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {addEventListener, removeEventListener} from '@shopify/lerna-tests-javascript-utilities/events';
-import {matches} from '@shopify/lerna-tests-javascript-utilities/dom';
+import {matches, foo} from '@shopify/lerna-tests-javascript-utilities/dom';
 
 // tslint:disable-next-line no-require-imports
 import Promise = require('core-js/library/es6/promise');
+
+foo();
 
 const TICK = 17;
 const DEV_TIMEOUT = 2000;
