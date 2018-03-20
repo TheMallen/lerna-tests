@@ -1,7 +1,3 @@
-.DS_Store
-lib
-*.log
-node_modules
-/*.js
-/*.ts
+*.js
+*.d.ts
 /decorators/

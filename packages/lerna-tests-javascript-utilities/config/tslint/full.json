@@ -1,9 +1,0 @@
-{
-  "extends": [
-    "tslint-config-shopify"
-  ],
-  "rules": {
-    "match-default-export-name": false,
-    "no-require-imports": false
-  }
-}

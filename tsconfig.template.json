@@ -1,10 +1,5 @@
 {
-  "extends": "../../tsconfig.template.json",
   "compilerOptions": {
-    "outDir": "./",
-    "baseUrl": "./src",
-    "rootDir": "./src",
-    "module": "commonjs",
     "moduleResolution": "node",
     "target": "es5",
     "declaration": true,
@@ -21,11 +16,5 @@
       "dom",
       "es2015"
     ]
-  },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "./node_modules"
-  ]
+  }
 }
