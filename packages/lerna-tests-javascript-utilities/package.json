@@ -1,5 +1,5 @@
 {
-  "name": "@themallen/lerna-test-javascript-utilities",
+  "name": "@shopify/lerna-tests-javascript-utilities",
   "version": "2.2.6",
   "description": "A set of utilities for JavaScript and TypeScript projects at Shopify.",
   "homepage": "https://github.com/Shopify/javascript-utilities",
