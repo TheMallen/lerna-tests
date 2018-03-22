@@ -1,6 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import {addEventListener, removeEventListener} from '@shopify/lerna-tests-javascript-utilities/events';
+import {
+  addEventListener,
+  removeEventListener,
+} from '@shopify/lerna-tests-javascript-utilities/events';
 import {matches} from '@shopify/lerna-tests-javascript-utilities/dom';
 
 // tslint:disable-next-line no-require-imports
@@ -21,22 +24,22 @@ export enum TransitionStatus {
 }
 
 export interface Transitionable {
-  transitionStatus: TransitionStatus,
+  transitionStatus: TransitionStatus;
 }
 
 export interface State extends Transitionable {
-  nextStatus?: TransitionStatus,
-  nextResolve?(arg: any): void,
-  nextReject?(error: any): void,
+  nextStatus?: TransitionStatus;
+  nextResolve?(arg: any): void;
+  nextReject?(error: any): void;
 }
 
 export interface Props {
-  skipLeaving?: boolean,
-  skipEntering?: boolean,
-  skipAppearing?: boolean,
-  selector?: string,
-  onTransitionEnd?(transitionStatus: TransitionStatus): void,
-  render(transitionStatus: TransitionStatus): React.ReactElement<any>,
+  skipLeaving?: boolean;
+  skipEntering?: boolean;
+  skipAppearing?: boolean;
+  selector?: string;
+  onTransitionEnd?(transitionStatus: TransitionStatus): void;
+  render(transitionStatus: TransitionStatus): React.ReactElement<any>;
 }
 
 export default class TransitionChild extends React.Component<Props, State> {
@@ -59,7 +62,9 @@ export default class TransitionChild extends React.Component<Props, State> {
       const {target} = event;
       const {selector} = this.props;
 
-      if (event.elapsedTime === 0) { return; }
+      if (event.elapsedTime === 0) {
+        return;
+      }
       if (target !== node && !targetMatchesSelector(target, selector)) {
         return;
       }
@@ -72,19 +77,26 @@ export default class TransitionChild extends React.Component<Props, State> {
     addEventListener(node, 'transitionend', callback);
     addEventListener(node, 'animationend', callback);
 
-    if (process.env.NODE_ENV === 'development' && typeof window !== 'undefined') {
+    if (
+      process.env.NODE_ENV === 'development' &&
+      typeof window !== 'undefined'
+    ) {
       setTimeout(() => {
         removeEventListener(node, 'animationend', callback);
         removeEventListener(node, 'transitionend', callback);
         return nextReject(
-          new Error('Timeout ended without an animation or transition finishing.'),
+          new Error(
+            'Timeout ended without an animation or transition finishing.',
+          ),
         );
       }, DEV_TIMEOUT);
     }
 
     // We need this timeout so that react doesn't batch our renders!
     setTimeout(() => {
-      if (this.hasUnMounted) { return; }
+      if (this.hasUnMounted) {
+        return;
+      }
 
       this.setState({
         nextResolve: undefined,
@@ -161,13 +173,16 @@ export default class TransitionChild extends React.Component<Props, State> {
   }
 
   render() {
-     const {render} = this.props;
-     const {transitionStatus} = this.state;
+    const {render} = this.props;
+    const {transitionStatus} = this.state;
 
-     return render(transitionStatus);
-   }
+    return render(transitionStatus);
+  }
 
-   private transitionBetweenStates(startStatus: TransitionStatus, activeStatus: TransitionStatus) {
+  private transitionBetweenStates(
+    startStatus: TransitionStatus,
+    activeStatus: TransitionStatus,
+  ) {
     return new Promise<Event>((resolve, reject) => {
       this.setState({
         transitionStatus: startStatus,
@@ -176,9 +191,12 @@ export default class TransitionChild extends React.Component<Props, State> {
         nextStatus: activeStatus,
       });
     });
-   }
+  }
 }
 
-function targetMatchesSelector(target: EventTarget, selector: string | null | undefined) {
-  return selector &&  matches((target as HTMLElement), selector);
+function targetMatchesSelector(
+  target: EventTarget,
+  selector: string | null | undefined,
+) {
+  return selector && matches(target as HTMLElement, selector);
 }

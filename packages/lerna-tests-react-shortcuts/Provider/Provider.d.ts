@@ -1,23 +1,24 @@
-/// <reference types="react" />
+// / <reference types="react" />
 import * as React from 'react';
 import ShortcutManager from '../ShortcutManager';
+
 export declare const contextTypes: {
-    shortcutManager: any;
+  shortcutManager: any;
 };
 export interface Context {
-    shortcutManager: ShortcutManager;
+  shortcutManager: ShortcutManager;
 }
 export interface Props {
-    children?: React.ReactNode;
+  children?: React.ReactNode;
 }
 export default class Provider extends React.Component<Props, never> {
-    static childContextTypes: {
-        shortcutManager: any;
-    };
-    private shortcutManager;
-    componentDidMount(): void;
-    getChildContext(): {
-        shortcutManager: ShortcutManager;
-    };
-    render(): React.ReactNode;
+  static childContextTypes: {
+    shortcutManager: any;
+  };
+  private shortcutManager;
+  componentDidMount(): void;
+  getChildContext(): {
+    shortcutManager: ShortcutManager;
+  };
+  render(): React.ReactNode;
 }

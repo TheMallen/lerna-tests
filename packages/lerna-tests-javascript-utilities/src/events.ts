@@ -1,12 +1,15 @@
-import {supportsEventListenerPassiveOption, supportsEventListenerOnceOption} from './feature-detect';
+import {
+  supportsEventListenerPassiveOption,
+  supportsEventListenerOnceOption,
+} from './feature-detect';
 
 export interface EventListenerArgs {
-  capture?: boolean,
+  capture?: boolean;
 }
 
 export interface AddEventListenerOptions extends EventListenerArgs {
-  passive?: boolean,
-  once?: boolean,
+  passive?: boolean;
+  once?: boolean;
 }
 
 type AddEventListener = (
@@ -21,12 +24,16 @@ export function addEventListener(
   handler: (event: Event) => any,
   options: AddEventListenerOptions = {},
 ) {
-  const wrappedHandler = !supportsEventListenerOnceOption() && options.once
-    ? once(target, eventName, handler)
-    : handler;
+  const wrappedHandler =
+    !supportsEventListenerOnceOption() && options.once
+      ? once(target, eventName, handler)
+      : handler;
 
-  if (supportsEventListenerPassiveOption() || supportsEventListenerOnceOption()) {
-    const addListener = (target.addEventListener as AddEventListener);
+  if (
+    supportsEventListenerPassiveOption() ||
+    supportsEventListenerOnceOption()
+  ) {
+    const addListener = target.addEventListener as AddEventListener;
     return addListener.call(target, eventName, handler, options);
   }
 

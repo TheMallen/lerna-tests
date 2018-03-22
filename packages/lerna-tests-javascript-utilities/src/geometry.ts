@@ -1,13 +1,13 @@
 export interface RectConfig {
-  top?: number,
-  left?: number,
-  width?: number,
-  height?: number,
+  top?: number;
+  left?: number;
+  width?: number;
+  height?: number;
 }
 
 export interface Point {
-  x: number,
-  y: number,
+  x: number;
+  y: number;
 }
 
 export class Rect {
@@ -29,8 +29,8 @@ export class Rect {
 
   get center(): Point {
     return {
-      x: this.left + (this.width / 2),
-      y: this.top + (this.height / 2),
+      x: this.left + this.width / 2,
+      y: this.top + this.height / 2,
     };
   }
 }

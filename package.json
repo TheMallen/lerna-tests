@@ -5,7 +5,7 @@
   "scripts": {
     "publish": "lerna publish",
     "build": "lerna run build",
-    "lint": "lerna run lint",
+    "lint": "yarn eslint **/*.{ts,tsx} ",
     "test": "yarn run build && jest",
     "check": "lerna run check",
     "release": "lerna publish && git push --follow-tags"
@@ -28,6 +28,8 @@
     "@types/jest": "^22.2.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-shopify": "^20.0.0",
     "jest": "^22.4.3",
     "lerna": "^2.9.0",
     "react": "^16.2.0",

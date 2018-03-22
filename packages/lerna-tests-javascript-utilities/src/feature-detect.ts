@@ -11,7 +11,9 @@ export function supportsEventListenerPassiveOption() {
 
   try {
     const opts = Object.defineProperty({}, 'passive', {
-      get() { supportsPassive = true; },
+      get() {
+        supportsPassive = true;
+      },
     });
     document.addEventListener('test', noop, opts);
   } catch (error) {
@@ -30,7 +32,9 @@ export function supportsEventListenerOnceOption() {
 
   try {
     const opts = Object.defineProperty({}, 'once', {
-      get() { supportsOnce = true; },
+      get() {
+        supportsOnce = true;
+      },
     });
     document.addEventListener('test', noop, opts);
   } catch (error) {

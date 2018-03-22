@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "lint": "tslint -c ../../config/tslint/full.json './src/**/*.{ts,tsx}' --exclude './node_modules/**/*.{ts,tsx}' --project tsconfig.json --type-check"
+    "lint": "yarn eslint -c ../../.eslintrc './src/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "@shopify/lerna-tests-javascript-utilities": "^3.0.4",
@@ -19,8 +19,6 @@
   "devDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "tslint": "^5.8.0",
-    "tslint-config-shopify": "^3.0.1",
     "typescript": "^2.5.3"
   }
 }

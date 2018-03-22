@@ -2,7 +2,10 @@ import url from 'url';
 
 export function getPath(urlParam: string): string {
   // No window, or we are running in JSDOM for tests
-  if (typeof window === 'undefined' || window.navigator.userAgent.indexOf('Node.js') >= 0) {
+  if (
+    typeof window === 'undefined' ||
+    window.navigator.userAgent.indexOf('Node.js') >= 0
+  ) {
     const path = url.parse(urlParam).pathname;
     return path ? path : '/';
   }

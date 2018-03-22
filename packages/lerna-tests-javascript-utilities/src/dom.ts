@@ -2,12 +2,16 @@ export function nodeContainsDescendant(
   rootNode: HTMLElement,
   descendant: HTMLElement,
 ): boolean {
-  if (rootNode === descendant) { return true; }
+  if (rootNode === descendant) {
+    return true;
+  }
 
   let parent = descendant.parentNode;
 
   while (parent != null) {
-    if (parent === rootNode) { return true; }
+    if (parent === rootNode) {
+      return true;
+    }
     parent = parent.parentNode;
   }
 
@@ -26,7 +30,7 @@ export function matches(node: HTMLElement, selector: string) {
   let i = matches.length;
   while (--i >= 0 && matches.item(i) !== node) {}
   return i > -1;
-};
+}
 
 // Polyfill for .closest()
 // https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
@@ -43,8 +47,9 @@ export function closest(node: HTMLElement, selector: string) {
     i = matches.length;
     while (--i >= 0 && matches.item(i) !== el) {
       continue;
-    };
-  } while ((i < 0) && (el));
+    }
+  } while (i < 0 && el);
   return el;
 }
+
 /* tslint:enable */

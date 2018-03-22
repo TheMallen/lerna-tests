@@ -24,8 +24,8 @@ export enum Months {
 }
 
 export interface Range {
-  start: Date,
-  end: Date,
+  start: Date;
+  end: Date;
 }
 
 export type Year = number;
@@ -37,7 +37,7 @@ export function getYearForRange({start, end}: Range) {
   if (end) {
     return end.getFullYear();
   }
-  return (new Date()).getFullYear();
+  return new Date().getFullYear();
 }
 
 export function getMonthForRange({start, end}: Range): Months {
@@ -47,7 +47,7 @@ export function getMonthForRange({start, end}: Range): Months {
   if (end) {
     return end.getMonth();
   }
-  return (new Date()).getMonth();
+  return new Date().getMonth();
 }
 
 export function abbreviationForWeekday(weekday: Weekdays) {
@@ -88,25 +88,31 @@ export function getWeeksForMonth(month: Months, year: Year): Week[] {
 }
 
 export function dateIsInRange(day: Date | null, range: Range) {
-  if (day == null) { return false; }
+  if (day == null) {
+    return false;
+  }
 
   const {start, end} = range;
 
-  return Boolean((start && day > start) && (end && day < end));
+  return Boolean(start && day > start && (end && day < end));
 }
 
 export function dateIsSelected(day: Date | null, range: Range) {
-  if (day == null) { return false; }
+  if (day == null) {
+    return false;
+  }
   const {start, end} = range;
 
-  return Boolean((start && isSameDay(start, day)) || (end && isSameDay(end, day)));
+  return Boolean(
+    (start && isSameDay(start, day)) || (end && isSameDay(end, day)),
+  );
 }
 
 export function isSameDay(day1: Date, day2: Date) {
   return (
-    (day1.getDate() === day2.getDate()) &&
-    (day1.getMonth() === day2.getMonth()) &&
-    (day1.getFullYear() === day2.getFullYear())
+    day1.getDate() === day2.getDate() &&
+    day1.getMonth() === day2.getMonth() &&
+    day1.getFullYear() === day2.getFullYear()
   );
 }
 
