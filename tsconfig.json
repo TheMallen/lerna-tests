@@ -6,7 +6,7 @@
     "jsx": "react",
     "strictNullChecks": true,
     "noImplicitAny": false,
-    "sourceMap": false,
+    "sourceMap": true,
     "noEmitOnError": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
@@ -16,5 +16,8 @@
       "dom",
       "es2015"
     ]
-  }
+  },
+  "exclude": [
+    "./node_modules"
+  ]
 }

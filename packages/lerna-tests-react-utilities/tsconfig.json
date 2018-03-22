@@ -1,14 +1,12 @@
 {
-  "extends": "../../tsconfig.template.json",
+  "extends": "../../tsconfig.json",
+  "compileOnSave": false,
   "compilerOptions": {
     "outDir": "./",
     "baseUrl": "./src",
-    "rootDir": "./src",
+    "rootDir": "./src"
   },
   "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "./node_modules"
+    "src/**/*.ts",
   ]
 }

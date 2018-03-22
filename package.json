@@ -6,8 +6,9 @@
     "publish": "lerna publish",
     "build": "lerna run build",
     "lint": "lerna run lint",
-    "test": "lerna run test",
-    "check": "lerna run check"
+    "test": "yarn run build && jest",
+    "check": "lerna run check",
+    "release": "lerna publish && git push --follow-tags"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,27 @@
     "packages/*"
   ],
   "devDependencies": {
-    "lerna": "^2.9.0"
+    "@types/jest": "^22.2.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.4.3",
+    "lerna": "^2.9.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "ts-jest": "^22.4.2"
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/setup.js"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": ".*\\.test\\.tsx?$"
   }
 }

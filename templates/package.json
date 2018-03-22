@@ -1,0 +1,13 @@
+{
+  "name": "@shopify/",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "lint": "tslint -c ../../config/tslint/full.json './src/**/*.{ts,tsx}' --exclude './node_modules/**/*.{ts,tsx}' --project tsconfig.json --type-check"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
