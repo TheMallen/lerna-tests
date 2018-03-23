@@ -7,5 +7,5 @@ jobs:
       - checkout
       - run: yarn
       - run: yarn lint
-      - run: yarn build
+      - run: yarn assert-built
       - run: yarn test
