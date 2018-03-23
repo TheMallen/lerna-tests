@@ -10,6 +10,7 @@ var animation_frame_1 = require("./animation-frame");
 var storage_1 = require("./storage");
 var Location_1 = require("./Location");
 var match_media_1 = require("./match-media");
+__export(require("./enzyme-util"));
 __export(require("./other"));
 exports.clock = new clock_1.default();
 exports.timer = new timer_1.default();
