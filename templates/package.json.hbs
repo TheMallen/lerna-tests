@@ -5,11 +5,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepublish": "in-publish && yarn run build || :"
   },
-  "author": "",
+  "author": "Shopify Inc.",
   "dependencies": {
   },
   "devDependencies": {
+    "in-publish": "^2.0.0"
   }
 }

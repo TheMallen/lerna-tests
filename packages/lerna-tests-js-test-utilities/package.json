@@ -6,9 +6,10 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "lint": "yarn eslint -c ../../.eslintrc './src/**/*.{ts,tsx}'"
+    "lint": "yarn eslint -c ../../.eslintrc './src/**/*.{ts,tsx}'",
+    "prepublish": "in-publish && yarn run build || :"
   },
-  "author": "",
+  "author": "Shopify Inc.",
   "dependencies": {
     "@shopify/lerna-tests-javascript-utilities": "^3.0.5",
     "enzyme": "^3.3.0",
@@ -17,6 +18,7 @@
     "lolex": "^2.3.2"
   },
   "devDependencies": {
-    "@types/enzyme": "^3.1.9"
+    "@types/enzyme": "^3.1.9",
+    "in-publish": "^2.0.0"
   }
 }

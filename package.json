@@ -8,11 +8,14 @@
   },
   "scripts": {
     "publish": "lerna publish",
+    "prebuild": "yarn run clean",
     "build": "lerna run build",
     "lint": "yarn eslint **/*.{ts,tsx} ",
-    "test": "yarn run build && jest",
+    "pretest": "yarn run build",
+    "test": "jest",
     "check": "lerna run check",
     "release": "lerna publish && git push --follow-tags",
+    "clean": "rimraf './packages/**/*.{js,d.ts}'",
     "generate": "yarn plop"
   },
   "repository": {
@@ -40,6 +43,7 @@
     "plop": "^2.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "rimraf": "^2.6.2",
     "ts-jest": "^22.4.2"
   },
   "jest": {

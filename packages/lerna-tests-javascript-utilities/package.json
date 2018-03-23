@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "lint": "yarn eslint -c ../../.eslintrc './src/**/*.{ts,tsx}'"
+    "lint": "yarn eslint -c ../../.eslintrc './src/**/*.{ts,tsx}'",
+    "prepublish": "in-publish && yarn run build || :"
   },
   "dependencies": {
     "@types/lodash": "^4.14.104",
@@ -14,6 +15,7 @@
     "lodash-decorators": "^4.5.0"
   },
   "devDependencies": {
+    "in-publish": "^2.0.0",
     "typescript": "^2.5.3"
   }
 }
