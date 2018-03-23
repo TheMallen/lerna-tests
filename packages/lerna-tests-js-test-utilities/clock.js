@@ -50,4 +50,3 @@ var Clock = /** @class */ (function () {
     return Clock;
 }());
 exports.default = Clock;
-//# sourceMappingURL=clock.js.map

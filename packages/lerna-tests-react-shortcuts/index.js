@@ -7,4 +7,3 @@ exports.Provider = Provider_1.default;
 exports.contextTypes = Provider_1.contextTypes;
 var ShortcutManager_1 = require("./ShortcutManager");
 exports.ShortcutManager = ShortcutManager_1.default;
-//# sourceMappingURL=index.js.map

@@ -38,4 +38,3 @@ var Provider = /** @class */ (function (_super) {
     return Provider;
 }(React.Component));
 exports.default = Provider;
-//# sourceMappingURL=Provider.js.map

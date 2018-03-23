@@ -17,4 +17,3 @@ function isMocked() {
 var augmentedFetchMock = fetchMock;
 augmentedFetchMock.isMocked = isMocked;
 exports.default = augmentedFetchMock;
-//# sourceMappingURL=fetch.js.map

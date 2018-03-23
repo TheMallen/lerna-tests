@@ -64,4 +64,3 @@ var AnimationFrame = /** @class */ (function () {
     return AnimationFrame;
 }());
 exports.default = AnimationFrame;
-//# sourceMappingURL=animation-frame.js.map

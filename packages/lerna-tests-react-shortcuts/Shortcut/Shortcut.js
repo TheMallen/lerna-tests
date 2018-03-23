@@ -28,7 +28,7 @@ var Shortcut = /** @class */ (function (_super) {
     Shortcut.prototype.componentDidMount = function () {
         var node = this.data.node;
         if (node != null) {
-            return false;
+            return;
         }
         var shortcutManager = this.context.shortcutManager;
         this.subscription = shortcutManager.subscribe(this.data);
@@ -45,4 +45,3 @@ var Shortcut = /** @class */ (function (_super) {
     return Shortcut;
 }(React.Component));
 exports.default = Shortcut;
-//# sourceMappingURL=Shortcut.js.map

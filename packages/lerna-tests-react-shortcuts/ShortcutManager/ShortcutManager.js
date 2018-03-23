@@ -81,7 +81,6 @@ var ShortcutManager = /** @class */ (function () {
         longestMatchingShortcut.onMatch();
         clearTimeout(this.timer);
         this.resetKeys();
-        return true;
     };
     __decorate([
         autobind_1.default
@@ -99,4 +98,3 @@ function isFocusedInput() {
         target.tagName === 'TEXTAREA' ||
         target.hasAttribute('contenteditable'));
 }
-//# sourceMappingURL=ShortcutManager.js.map

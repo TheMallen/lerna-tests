@@ -34,4 +34,3 @@ var Timer = /** @class */ (function () {
     return Timer;
 }());
 exports.default = Timer;
-//# sourceMappingURL=timer.js.map

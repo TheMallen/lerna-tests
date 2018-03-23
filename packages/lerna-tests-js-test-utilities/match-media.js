@@ -33,4 +33,3 @@ function mediaQueryList(values) {
     return __assign({}, defaultMatcher(), values);
 }
 exports.mediaQueryList = mediaQueryList;
-//# sourceMappingURL=match-media.js.map

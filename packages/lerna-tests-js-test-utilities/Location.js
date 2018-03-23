@@ -31,4 +31,3 @@ var Location = /** @class */ (function () {
     return Location;
 }());
 exports.default = Location;
-//# sourceMappingURL=Location.js.map

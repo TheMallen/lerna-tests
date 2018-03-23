@@ -25,4 +25,3 @@ exports.noopPromise = async_helpers_1.noopPromise;
 exports.nextEventLoopTick = async_helpers_1.nextEventLoopTick;
 var fetch_1 = require("./fetch");
 exports.fetch = fetch_1.default;
-//# sourceMappingURL=index.js.map

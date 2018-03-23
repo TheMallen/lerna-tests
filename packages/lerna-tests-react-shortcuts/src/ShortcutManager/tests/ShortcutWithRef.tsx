@@ -2,11 +2,11 @@ import * as React from 'react';
 import autobind from '@shopify/lerna-tests-javascript-utilities/decorators/autobind';
 import Shortcut from '../../Shortcut';
 
-interface Props {
+export interface Props {
   spy: jest.Mock<{}>;
 }
 
-interface State {
+export interface State {
   node?: HTMLElement | null;
 }
 

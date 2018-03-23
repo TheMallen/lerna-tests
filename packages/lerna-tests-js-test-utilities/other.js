@@ -65,8 +65,10 @@ function performTimesAsync(times, callback) {
 }
 exports.performTimesAsync = performTimesAsync;
 function withEnv(env, callback) {
+    // eslint-disable-next-line no-process-env
     process.env.NODE_ENV = env;
     function resetEnv() {
+        // eslint-disable-next-line no-process-env
         process.env.NODE_ENV = 'test';
     }
     try {
@@ -102,4 +104,3 @@ var UserAgent;
 })(UserAgent = exports.UserAgent || (exports.UserAgent = {}));
 function noop() { }
 exports.noop = noop;
-//# sourceMappingURL=other.js.map

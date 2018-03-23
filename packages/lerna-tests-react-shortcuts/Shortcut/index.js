@@ -6,4 +6,3 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Shortcut_1 = require("./Shortcut");
 __export(require("./Shortcut"));
 exports.default = Shortcut_1.default;
-//# sourceMappingURL=index.js.map
