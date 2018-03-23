@@ -7,6 +7,7 @@ import Storage from './storage';
 import Location from './Location';
 import MatchMedia from './match-media';
 
+export * from './enzyme-util';
 export * from './other';
 
 export const clock = new Clock();
