@@ -1,13 +1,13 @@
 {
   "name": "@shopify/lerna-tests-react-utilities",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
     "lint": "yarn eslint -c ../../.eslintrc './src/**/*.{ts,tsx}'"
   },
   "dependencies": {
-    "@shopify/lerna-tests-javascript-utilities": "^3.0.4",
+    "@shopify/lerna-tests-javascript-utilities": "^3.0.5",
     "@types/classnames": "^2.2.3",
     "@types/node": "^9.4.7",
     "@types/react": "^16.0.40",
