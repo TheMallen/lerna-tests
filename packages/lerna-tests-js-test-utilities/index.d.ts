@@ -5,6 +5,7 @@ import AnimationFrame from './animation-frame';
 import Storage from './storage';
 import Location from './Location';
 import MatchMedia from './match-media';
+export * from './enzyme-util';
 export * from './other';
 export declare const clock: Clock;
 export declare const timer: Timer;
