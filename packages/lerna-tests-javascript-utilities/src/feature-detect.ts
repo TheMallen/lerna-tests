@@ -1,7 +1,8 @@
+import {noop} from './other';
+
 /*
 https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md#feature-detection
 */
-const noop = () => undefined;
 
 let supportsPassive: boolean | null = null;
 export function supportsEventListenerPassiveOption() {

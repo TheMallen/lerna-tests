@@ -17,9 +17,11 @@ export async function performTimesAsync(
 }
 
 export function withEnv<T = any>(env: string, callback: () => T): T {
+  // eslint-disable-next-line no-process-env
   process.env.NODE_ENV = env;
 
   function resetEnv() {
+    // eslint-disable-next-line no-process-env
     process.env.NODE_ENV = 'test';
   }
 

@@ -1,4 +1,4 @@
-import classnames = require('classnames'); // tslint:disable-line no-require-imports
+import classnames = require('classnames');
 
 export const classNames = classnames as any;
 

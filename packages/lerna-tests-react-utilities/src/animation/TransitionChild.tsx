@@ -6,8 +6,8 @@ import {
 } from '@shopify/lerna-tests-javascript-utilities/events';
 import {matches} from '@shopify/lerna-tests-javascript-utilities/dom';
 
-// tslint:disable-next-line no-require-imports
-import Promise = require('core-js/library/es6/promise');
+// eslint-disable-line no-require-imports
+import Promiselike = require('core-js/library/es6/promise');
 
 const TICK = 17;
 const DEV_TIMEOUT = 2000;
@@ -23,14 +23,16 @@ export enum TransitionStatus {
   Leaving,
 }
 
+export type Nullable<T> = T | null;
+
 export interface Transitionable {
   transitionStatus: TransitionStatus;
 }
 
 export interface State extends Transitionable {
-  nextStatus?: TransitionStatus;
-  nextResolve?(arg: any): void;
-  nextReject?(error: any): void;
+  nextStatus: Nullable<TransitionStatus>;
+  nextResolve: Nullable<(arg: any) => void>;
+  nextReject: Nullable<(error: any) => void>;
 }
 
 export interface Props {
@@ -45,6 +47,9 @@ export interface Props {
 export default class TransitionChild extends React.Component<Props, State> {
   state: State = {
     transitionStatus: TransitionStatus.Hidden,
+    nextStatus: null,
+    nextResolve: null,
+    nextReject: null,
   };
 
   private hasUnMounted = false;
@@ -78,6 +83,7 @@ export default class TransitionChild extends React.Component<Props, State> {
     addEventListener(node, 'animationend', callback);
 
     if (
+      // eslint-disable-next-line no-process-env
       process.env.NODE_ENV === 'development' &&
       typeof window !== 'undefined'
     ) {
@@ -99,23 +105,26 @@ export default class TransitionChild extends React.Component<Props, State> {
       }
 
       this.setState({
-        nextResolve: undefined,
-        nextReject: undefined,
-        nextStatus: undefined,
+        nextResolve: null,
+        nextReject: null,
+        nextStatus: null,
         transitionStatus: nextStatus,
       });
     }, TICK);
   }
 
-  componentWillAppear(callback: Function) {
+  async componentWillAppear(callback: Function) {
     if (this.props.skipAppearing) {
-      return callback();
+      callback();
+      return;
     }
 
-    this.transitionBetweenStates(
+    const event = await this.transitionBetweenStates(
       TransitionStatus.AppearingStart,
       TransitionStatus.Appearing,
-    ).then(callback as () => PromiseLike<{}>);
+    );
+
+    callback(event);
   }
 
   componentDidAppear() {
@@ -126,15 +135,18 @@ export default class TransitionChild extends React.Component<Props, State> {
     }
   }
 
-  componentWillEnter(callback: Function) {
+  async componentWillEnter(callback: Function) {
     if (this.props.skipEntering) {
-      return callback();
+      callback();
+      return;
     }
 
-    this.transitionBetweenStates(
+    const event = await this.transitionBetweenStates(
       TransitionStatus.EnteringStart,
       TransitionStatus.Entering,
-    ).then(callback as () => PromiseLike<{}>);
+    );
+
+    callback(event);
   }
 
   componentDidEnter() {
@@ -145,15 +157,18 @@ export default class TransitionChild extends React.Component<Props, State> {
     }
   }
 
-  componentWillLeave(callback: Function) {
+  async componentWillLeave(callback: Function) {
     if (this.props.skipLeaving) {
-      return callback();
+      callback();
+      return;
     }
 
-    this.transitionBetweenStates(
+    const event = await this.transitionBetweenStates(
       TransitionStatus.LeavingStart,
       TransitionStatus.Leaving,
-    ).then(callback as () => PromiseLike<{}>);
+    );
+
+    callback(event);
   }
 
   componentDidLeave() {
@@ -183,7 +198,7 @@ export default class TransitionChild extends React.Component<Props, State> {
     startStatus: TransitionStatus,
     activeStatus: TransitionStatus,
   ) {
-    return new Promise<Event>((resolve, reject) => {
+    return new Promiselike<Event>((resolve, reject) => {
       this.setState({
         transitionStatus: startStatus,
         nextResolve: resolve,

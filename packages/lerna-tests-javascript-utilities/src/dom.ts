@@ -18,7 +18,7 @@ export function nodeContainsDescendant(
   return false;
 }
 
-/* tslint:disable */
+/* eslint-disable */
 // Polyfill for .matches()
 // https://developer.mozilla.org/en/docs/Web/API/Element/matches
 export function matches(node: HTMLElement, selector: string) {
@@ -52,4 +52,4 @@ export function closest(node: HTMLElement, selector: string) {
   return el;
 }
 
-/* tslint:enable */
+/* eslint-enable */

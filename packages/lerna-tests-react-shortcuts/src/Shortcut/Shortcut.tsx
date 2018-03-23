@@ -29,8 +29,9 @@ export default class Shortcut extends React.Component<Props, never> {
     const {node} = this.data;
 
     if (node != null) {
-      return false;
+      return;
     }
+
     const {shortcutManager} = this.context;
     this.subscription = shortcutManager.subscribe(this.data);
   }

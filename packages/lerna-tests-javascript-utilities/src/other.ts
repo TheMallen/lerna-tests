@@ -1,4 +1,4 @@
-// tslint:disable-next-line:no-empty
+// eslint-disable-next-line no-empty
 export function noop() {}
 
 export function createUniqueIDFactory(prefix: string) {

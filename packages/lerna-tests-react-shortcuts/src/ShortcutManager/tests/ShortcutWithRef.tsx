@@ -17,9 +17,11 @@ export default class ShortcutWithFocus extends React.Component<Props, State> {
 
   componentWillUpdate() {
     const {node} = this.state;
+
     if (!node) {
-      return false;
+      return;
     }
+
     node.focus();
   }
 
@@ -28,7 +30,7 @@ export default class ShortcutWithFocus extends React.Component<Props, State> {
     const {node} = this.state;
     return (
       <div className="app">
-        <button ref={this.setRef} />
+        <button type="button" ref={this.setRef} />
         <Shortcut keys={['z']} onMatch={spy} node={node} />
       </div>
     );

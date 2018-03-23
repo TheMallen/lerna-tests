@@ -99,7 +99,6 @@ export default class ShortcutManager {
     longestMatchingShortcut.onMatch();
     clearTimeout(this.timer);
     this.resetKeys();
-    return true;
   }
 }
 
