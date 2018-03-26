@@ -1,5 +1,5 @@
 import {addEventListener} from '@shopify/lerna-tests-javascript-utilities/events';
-import autobind from '@shopify/lerna-tests-javascript-utilities/decorators/autobind';
+import {autobind} from '@shopify/lerna-tests-javascript-utilities/decorators';
 import {isEqual, take} from 'lodash';
 import {Key} from '../types';
 
