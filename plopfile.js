@@ -22,6 +22,11 @@ module.exports = function(plop) {
       },
       {
         type: 'add',
+        path: 'packages/{{name}}/README.md',
+        templateFile: 'templates/README.md.hbs',
+      },
+      {
+        type: 'add',
         path: 'packages/{{name}}/src/index.ts',
         templateFile: 'templates/index.ts.hbs',
       },
