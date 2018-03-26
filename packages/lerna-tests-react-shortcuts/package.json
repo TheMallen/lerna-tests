@@ -1,13 +1,13 @@
 {
   "name": "@shopify/lerna-tests-react-shortcuts",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
     "lint": "yarn eslint -c ../../.eslintrc './src/**/*.{ts,tsx}'"
   },
   "dependencies": {
-    "@shopify/lerna-tests-javascript-utilities": "^3.0.6",
+    "@shopify/lerna-tests-javascript-utilities": "^3.0.7",
     "in-publish": "^2.0.0",
     "react": "^16.2.0"
   },
