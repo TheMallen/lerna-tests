@@ -1,6 +1,6 @@
 {
   "name": "@shopify/lerna-tests-react-shortcuts",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "license": "MIT",
   "main": "./dist/index.js",
   "files": [
@@ -11,7 +11,7 @@
     "lint": "yarn eslint -c ../../.eslintrc './src/**/*.{ts,tsx}'"
   },
   "dependencies": {
-    "@shopify/lerna-tests-javascript-utilities": "^3.0.7",
+    "@shopify/lerna-tests-javascript-utilities": "^3.0.8",
     "react": "^16.2.0"
   },
   "devDependencies": {

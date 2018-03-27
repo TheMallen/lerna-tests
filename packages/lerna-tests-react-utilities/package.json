@@ -1,6 +1,6 @@
 {
   "name": "@shopify/lerna-tests-react-utilities",
-  "version": "3.0.8",
+  "version": "3.0.9",
   "license": "MIT",
   "main": "./dist/index.js",
   "files": [
@@ -12,7 +12,7 @@
     "prepublishOnly": "yarn run build"
   },
   "dependencies": {
-    "@shopify/lerna-tests-javascript-utilities": "^3.0.7",
+    "@shopify/lerna-tests-javascript-utilities": "^3.0.8",
     "@types/classnames": "^2.2.3",
     "@types/node": "^9.4.7",
     "@types/react": "^16.0.40",
