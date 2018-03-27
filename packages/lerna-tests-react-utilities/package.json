@@ -2,10 +2,14 @@
   "name": "@shopify/lerna-tests-react-utilities",
   "version": "3.0.8",
   "license": "MIT",
+  "main": "./dist/index.js",
+  "files": [
+    "./dist"
+  ],
   "scripts": {
     "build": "tsc",
     "lint": "yarn eslint -c ../../.eslintrc './src/**/*.{ts,tsx}'",
-    "prepublish": "in-publish && yarn run build || :"
+    "prepublishOnly": "yarn run build"
   },
   "dependencies": {
     "@shopify/lerna-tests-javascript-utilities": "^3.0.7",
@@ -18,7 +22,6 @@
     "react-addons-transition-group": "^15.6.2"
   },
   "devDependencies": {
-    "in-publish": "^2.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "typescript": "^2.5.3"

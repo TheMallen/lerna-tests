@@ -6,13 +6,12 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "prepublish": "in-publish && yarn run build || :"
+    "prepublishOnly": "yarn run build"
   },
   "author": "Shopify Inc.",
   "dependencies": {
   },
   "devDependencies": {
-    "in-publish": "^2.0.0",
     "typescript": "^2.5.3"
   }
 }
