@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "lint": "yarn eslint -c ../../.eslintrc './src/**/*.{ts,tsx}'"
+    "lint": "yarn eslint -c ../../.eslintrc './src/**/*.{ts,tsx}'",
+    "prepublish": "yarn run build"
   },
   "dependencies": {
     "@shopify/lerna-tests-javascript-utilities": "^3.0.8",

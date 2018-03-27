@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "yarn eslint -c ../../.eslintrc './src/**/*.{ts,tsx}'",
-    "prepublishOnly": "yarn run build"
+    "prepublish": "yarn run build"
   },
   "dependencies": {
     "@types/lodash": "^4.14.104",
