@@ -1,6 +1,6 @@
 {
   "name": "@shopify/lerna-tests-js-test-utilities",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "license": "MIT",
   "description": "",
   "main": "./dist/index.js",
@@ -14,7 +14,7 @@
   },
   "author": "Shopify Inc.",
   "dependencies": {
-    "@shopify/lerna-tests-javascript-utilities": "^3.0.8",
+    "@shopify/lerna-tests-javascript-utilities": "^3.0.9",
     "enzyme": "^3.3.0",
     "fetch-mock": "^6.3.0",
     "isomorphic-fetch": "^2.2.1",
